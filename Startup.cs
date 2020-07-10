@@ -26,7 +26,7 @@ namespace WebApplication_Group01FINAL
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
+            app.UseRouting(); 
 
             app.UseEndpoints(endpoints =>
             {

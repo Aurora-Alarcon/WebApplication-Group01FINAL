@@ -11,6 +11,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>login</title>
 
+    <script type="text/javascript">function validate_dates()
+{
+	var date1 = document.getElementById("from_date").value.split("-");
+	var date2 = document.getElementById("to_date").value.split("-");
+
+ 	var Fecha1 = new Date(parseInt(date1[0]),parseInt(date1[1])-1,parseInt(date1[2]));
+    var Fecha2 = new Date(parseInt(date2[0]),parseInt(date2[1])-1,parseInt(date2[2]));
+
+	if (Fecha1>Fecha2){
+		alert("The return date must be higher than start date");
+		return false;
+	}
+
+
+
+}</script>
+
+
     <style type="text/css">
         html,
         body {
@@ -45,11 +63,11 @@
             <tr>
                 <td height="578">
                     <p>&nbsp;</p>
-                    <form name="form1" method="post" action="">
+                    <form name="form1" id="form1" method="get" action="" onsubmit="return validate_dates()">
                         <table width="550" height="226" border="0">
                             <tbody>
                                 <tr>
-                                    <td colspan="3"><strong>Your Travel Itinerary</strong></td>
+                                    <td colspan="3"><strong>Your Travel Itenarary</strong></td>
                                     <td width="26">&nbsp;</td>
                                     <td width="26">&nbsp;</td>
                                     <td width="30">&nbsp;</td>
@@ -116,7 +134,7 @@
                                     <td>&nbsp;</td>
                                     <td><input type="reset" name="reset" id="reset" value="Reset"></td>
                                     <td>&nbsp;</td>
-                                    <td><input type="submit" name="submit" id="submit" value="Submit"></td>
+                                    <td><input type="submit" name="submit" id="submit" value="Submit"> </td>
                                     <td>&nbsp;</td>
                                 </tr>
                             </tbody>
@@ -137,3 +155,4 @@
     </table>
 </body>
 </html>
+
